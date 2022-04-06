@@ -40,6 +40,7 @@ export default function Navbar({ isLight, setIsLight }: Props) {
           >
             <img
               className={css.themeSwitch}
+              title="theme switch"
               src={
                 isLight
                   ? "./images/darkModeIcon.png"
