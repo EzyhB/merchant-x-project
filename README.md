@@ -19,19 +19,19 @@ How to run the project:
 - There is also a docker file that can be used to run the application inside of a docker container.
 
 Tech stack used for front-end:
-Figma: To design my application (https://www.figma.com/file/kr9NYS7MQeVZ95MFo65tg1/merchant-x?node-id=0%3A1)
-React JS: framework requested by the task provider.
-Jest/React testing library: To run some basic unit tests to ensure bug-free code.
-Cypress: End to end test to go through the user flow and show the application working.
-Typescript: For real-time code debugging and making the code easier to maintain.
-Styled-Components: For creating my own mini UI library for super fast and easy expansion of the application.
-Netlify: For continued integration and continuous deployment.
-Git: Version control
+- Figma: To design my application (https://www.figma.com/file/kr9NYS7MQeVZ95MFo65tg1/merchant-x?node-id=0%3A1)
+- React JS: framework requested by the task provider.
+- Jest/React testing library: To run some basic unit tests to ensure bug-free code.
+- Cypress: End to end test to go through the user flow and show the application working.
+- Typescript: For real-time code debugging and making the code easier to maintain.
+- Styled-Components: For creating my own mini UI library for super fast and easy expansion of the application.
+- Netlify: For continued integration and continuous deployment.
+- Git: Version control
 
 Tech stack used for back-end:
-Next JS: (Best framework IMO)
-Typescript: For real-time code debugging and making the code easier to maintain.  
-Heroku: To host my database because I planned on creating a script to store all pokemon data inside of my own database. To prevent complications of communicating with 3 different APIs for 1 result. Soon realised that I'm limited to 5 calls per hour.
+- Next JS: (Best framework IMO)
+- Typescript: For real-time code debugging and making the code easier to maintain.  
+- Heroku: To host my database because I planned on creating a script to store all pokemon data inside of my own database. To prevent complications of communicating with 3 different APIs for 1 result. Soon realised that I'm limited to 5 calls per hour.
 
 Noteworthy accessibility features:
 
