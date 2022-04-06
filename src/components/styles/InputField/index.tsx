@@ -72,6 +72,7 @@ let searchItem = "";
 
 export function InputField({ setSearchFor }: Props) {
   const [isEmpty, setIsEmpty] = useState(true);
+  const [inputValue, setInputValue] = useState("");
 
   const checkIfInputEmpty = () => {
     if (searchItem.trim().length > 1) {
@@ -86,7 +87,6 @@ export function InputField({ setSearchFor }: Props) {
     const form = e.target as HTMLFormElement;
     const input = form[1] as HTMLInputElement;
     setSearchFor(input.value);
-    console.log("form submit", input.value);
   };
 
   const startDistation = () => {
@@ -107,6 +107,7 @@ export function InputField({ setSearchFor }: Props) {
 
         searchItem = resultText[0].transcript;
         checkIfInputEmpty();
+        setInputValue(searchItem);
         setSearchFor(searchItem);
 
         recognition.stop();
@@ -139,9 +140,10 @@ export function InputField({ setSearchFor }: Props) {
           type="text"
           title="Search for a Pokemon..."
           placeholder="Search for a Pokemon..."
+          value={inputValue}
           onChange={(e) => {
             searchItem = e.target.value;
-
+            setInputValue(searchItem);
             checkIfInputEmpty();
           }}
         ></InputBar>

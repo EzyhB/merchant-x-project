@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "../styles/Container";
 import { GridContainer } from "../styles/GridContainer";
 import { GridItem } from "../styles/GridItem";
@@ -10,21 +10,34 @@ import css from "./PokemonDisplay.module.css";
 interface PokemonOBJ {
   name: string;
   description: string;
-  image: string;
+  sprite: string;
 }
 
 const initialState = {
   name: "Arceus",
   description:
     "According to the legends of Sinnoh, this Pokémon emerged from an egg and shaped all there is in this world.",
-  image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/493.png",
+  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/493.png",
 };
 
 export default function PokemonDisplay() {
   const [pokemon, setPokemon] = useState<PokemonOBJ>(initialState);
-  const [searchFor, setSearchFor] = useState("");
+  const [searchFor, setSearchFor] = useState("Arceus");
 
-  console.log("searchFor", searchFor);
+  useEffect(() => {
+    const fetchPokemonData = async () => {
+      const pokemonData = await fetch(
+        "https://merchant-x-backend.vercel.app/api/" + searchFor
+      );
+
+      const jsonPokemonData = await pokemonData.json();
+      console.log(jsonPokemonData);
+
+      setPokemon(jsonPokemonData);
+    };
+
+    // fetchPokemonData();
+  }, [searchFor]);
 
   return (
     <Container>
@@ -36,7 +49,7 @@ export default function PokemonDisplay() {
         <GridItem className={css.gridDisplay} md="six">
           <img
             className={css.pokemonImage}
-            src={pokemon.image}
+            src={pokemon.sprite}
             alt={`Picture of the Pokemon named ${pokemon.name}`}
           />
         </GridItem>
