@@ -3,7 +3,7 @@ The Merchant-X project.
 How to run the project:
 
 - The project front-end has been deployed on (
-  https://624d9ea77ff84700094603b2--mellow-sorbet-887160.netlify.app/
+  https://main--mellow-sorbet-887160.netlify.app/
 
   https://github.com/EzyhB/merchant-x-project
   )
