@@ -44,7 +44,7 @@ describe("Testing pokemon main display with initial state", () => {
   });
 });
 
-describe("testing compatibility with input field & link with backend", () => {
+describe("testing compatibility with input field", () => {
   it("should allow users see the input Field", () => {
     render(
       <ThemeProvider theme={darkTheme}>
@@ -69,19 +69,5 @@ describe("testing compatibility with input field & link with backend", () => {
     expect(await screen.findByPlaceholderText(/Search for a/i)).toHaveValue(
       "pikachu".repeat(10)
     );
-  });
-
-  it("should show the pokemon searched for by the user", () => {
-    render(
-      <ThemeProvider theme={darkTheme}>
-        <PokemonDisplay />
-      </ThemeProvider>
-    );
-
-    const inputElement = screen.getByPlaceholderText("Search for a Pokemon...");
-    userEvent.type(inputElement, "pikachu");
-
-    // const buttonElement = screen.getByTitle("submit search");
-    // userEvent.click(buttonElement);
   });
 });
