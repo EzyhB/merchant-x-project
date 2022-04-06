@@ -49,7 +49,7 @@ export default function PokemonDisplay() {
       setPokemon(jsonPokemonData);
     };
 
-    // fetchPokemonData();
+    fetchPokemonData();
   }, [searchFor]);
 
   useEffect(() => {
