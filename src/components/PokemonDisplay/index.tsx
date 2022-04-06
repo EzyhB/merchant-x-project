@@ -21,7 +21,7 @@ const initialState = {
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
 };
 
-let highQualityImg = 493;
+let highQualityImg = "493";
 
 let imgSwitch = false;
 
@@ -40,10 +40,14 @@ export default function PokemonDisplay() {
 
       const jsonPokemonData = await pokemonData.json();
       console.log(jsonPokemonData);
-      highQualityImg = jsonPokemonData.sprite.replace(
-        /["https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" ".png"]/g,
-        ""
-      );
+      highQualityImg = jsonPokemonData.sprite
+        .replace(
+          /["https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" ".png"]/g,
+          ""
+        )
+        .toString()
+        .padStart(3, "0");
+
       console.log(highQualityImg);
 
       setPokemon(jsonPokemonData);
@@ -82,7 +86,7 @@ export default function PokemonDisplay() {
         <GridItem md="six">
           <Container className={css.gridDisplayText}>
             <Typography id={css.pokemonName} variant="h2">
-              {pokemon.name}
+              {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
             </Typography>
           </Container>
           <Container className={css.gridDisplay}>
