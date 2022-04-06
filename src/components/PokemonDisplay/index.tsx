@@ -80,7 +80,7 @@ export default function PokemonDisplay() {
                 ? `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${highQualityImg}.png`
                 : pokemon.sprite
             }
-            alt={`Picture of the Pokemon named ${pokemon.name}`}
+            alt={`Pokemon named ${pokemon.name}`}
           />
         </GridItem>
         <GridItem md="six">
