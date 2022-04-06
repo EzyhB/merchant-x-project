@@ -17,12 +17,20 @@ const initialState = {
   name: "Arceus",
   description:
     "According to the legends of Sinnoh, this Pokémon emerged from an egg and shaped all there is in this world.",
-  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/493.png",
+  sprite:
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
 };
+
+let highQualityImg = 493;
+
+let imgSwitch = false;
 
 export default function PokemonDisplay() {
   const [pokemon, setPokemon] = useState<PokemonOBJ>(initialState);
+  const [isSwitching, setisSwitching] = useState(false);
   const [searchFor, setSearchFor] = useState("Arceus");
+
+  let imageWidth = isSwitching ? "70%" : "100%";
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -32,12 +40,25 @@ export default function PokemonDisplay() {
 
       const jsonPokemonData = await pokemonData.json();
       console.log(jsonPokemonData);
+      highQualityImg = jsonPokemonData.sprite.replace(
+        /["https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" ".png"]/g,
+        ""
+      );
+      console.log(highQualityImg);
 
       setPokemon(jsonPokemonData);
     };
 
     // fetchPokemonData();
   }, [searchFor]);
+
+  useEffect(() => {
+    setInterval(() => {
+      imgSwitch = !imgSwitch;
+
+      setisSwitching(imgSwitch);
+    }, 5000);
+  }, []);
 
   return (
     <Container>
@@ -46,15 +67,20 @@ export default function PokemonDisplay() {
       </Container>
 
       <GridContainer>
-        <GridItem className={css.gridDisplay} md="six">
+        <GridItem className={css.gridDisplayImg} md="six">
           <img
             className={css.pokemonImage}
-            src={pokemon.sprite}
+            style={{ maxWidth: imageWidth }}
+            src={
+              isSwitching
+                ? `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${highQualityImg}.png`
+                : pokemon.sprite
+            }
             alt={`Picture of the Pokemon named ${pokemon.name}`}
           />
         </GridItem>
         <GridItem md="six">
-          <Container className={css.gridDisplay}>
+          <Container className={css.gridDisplayText}>
             <Typography id={css.pokemonName} variant="h2">
               {pokemon.name}
             </Typography>
