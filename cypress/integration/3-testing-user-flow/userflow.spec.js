@@ -1,5 +1,3 @@
-import cypress from "cypress";
-
 describe("testing user flow on the website", () => {
   it("should search for pokemon and display their correct information & check dark/light mode", async () => {
     cy.visit("https://main--mellow-sorbet-887160.netlify.app/");
