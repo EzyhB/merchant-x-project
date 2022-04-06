@@ -124,21 +124,25 @@ export function InputField({ setSearchFor }: Props) {
         handleSubmit(e);
       }}
       id="form-submit"
+      role="search"
     >
       <InputBorder>
         {isEmpty ? (
           <MicIcon
+            role={"button"}
+            title="text to speech"
             onClick={() => {
               startDistation();
             }}
           />
         ) : (
-          <SearchIcon type="submit" />
+          <SearchIcon type="submit" role="button" title="submit search" />
         )}
 
         <InputBar
           type="text"
           title="Search for a Pokemon..."
+          role="searchbox"
           placeholder="Search for a Pokemon..."
           value={inputValue}
           onChange={(e) => {
