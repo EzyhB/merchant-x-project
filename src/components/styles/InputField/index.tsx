@@ -5,6 +5,10 @@ export interface IWindow extends Window {
   webkitSpeechRecognition: any;
 }
 
+interface Props {
+  setSearchFor: Function;
+}
+
 const InputBorder = styled.div`
   max-width: 380px;
   border: 1px solid #ddd;
@@ -66,8 +70,7 @@ const InputBar = styled.input`
 
 let searchItem = "";
 
-export function InputField() {
-  const [searchFor, setSearchFor] = useState("");
+export function InputField({ setSearchFor }: Props) {
   const [isEmpty, setIsEmpty] = useState(true);
 
   const checkIfInputEmpty = () => {
@@ -82,7 +85,8 @@ export function InputField() {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const input = form[1] as HTMLInputElement;
-    console.log(input.value);
+    setSearchFor(input.value);
+    console.log("form submit", input.value);
   };
 
   const startDistation = () => {
@@ -135,10 +139,9 @@ export function InputField() {
           type="text"
           title="Search for a Pokemon..."
           placeholder="Search for a Pokemon..."
-          value={searchFor}
           onChange={(e) => {
             searchItem = e.target.value;
-            setSearchFor(searchItem);
+
             checkIfInputEmpty();
           }}
         ></InputBar>

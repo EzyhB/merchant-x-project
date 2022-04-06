@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "../styles/Container";
 import { GridContainer } from "../styles/GridContainer";
 import { GridItem } from "../styles/GridItem";
+import { InputField } from "../styles/InputField";
 import { Typography } from "../styles/Typography";
 
 import css from "./PokemonDisplay.module.css";
@@ -21,10 +22,15 @@ const initialState = {
 
 export default function PokemonDisplay() {
   const [pokemon, setPokemon] = useState<PokemonOBJ>(initialState);
+  const [searchFor, setSearchFor] = useState("");
+
+  console.log("searchFor", searchFor);
 
   return (
     <Container>
-      
+      <Container className={css.searchBarDisplay}>
+        <InputField setSearchFor={setSearchFor} />
+      </Container>
 
       <GridContainer>
         <GridItem className={css.gridDisplay} md="six">
