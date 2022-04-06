@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+The Merchant-X project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+How to run the project:
 
-## Available Scripts
+- The project front-end has been deployed on (
+  https://624d9ea77ff84700094603b2--mellow-sorbet-887160.netlify.app/
+  )
+- The project back-end has been deployed on(
+  https://merchant-x-backend.vercel.app/api/
+  )
 
-In the project directory, you can run:
+- The project can also be run on Localhost by running the following commands inside of the quotation marks in the terminal on vsCode or any other code editor - (1) "npm i" (2) "npm start"
 
-### `npm start`
+- There is also a docker file that can be used to run the application inside of a docker container.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Tech stack used for front-end:
+React JS: framework requested by the task provider.
+Jest/React testing library: To run some basic unit tests to ensure bug-free code.
+Cypress: End to end test to go through the user flow and show the application working.
+Typescript: For real-time code debugging and making the code easier to maintain.
+Styled-Components: For creating my own mini UI library for super fast and easy expansion of the application.
+Netlify: For continued integration and continuous deployment.
+Git: Version control
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tech stack used for back-end:
+Next JS: (Best framework IMO)
+Typescript: For real-time code debugging and making the code easier to maintain.  
+Heroku: To host my database because I planned on creating a script to store all pokemon data inside of my own database. To prevent complications of communicating with 3 different APIs for 1 result. Soon realised that I'm limited to 5 calls per hour.

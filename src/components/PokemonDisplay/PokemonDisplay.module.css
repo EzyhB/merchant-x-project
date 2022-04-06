@@ -1,7 +1,7 @@
 .gridDisplayImg {
   display: flex;
   justify-content: center;
-  min-height: 300px;
+  margin-bottom: 2rem;
 }
 .gridDisplayText {
   display: flex;
@@ -35,6 +35,10 @@
   .searchBarDisplay {
     margin: 1rem 0 0 0;
   }
+
+  .gridDisplayImg {
+    min-height: 305px;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -44,5 +48,8 @@
 
   #pokemonName {
     font-size: 2.75rem;
+  }
+  .gridDisplayImg {
+    min-height: 400px;
   }
 }
