@@ -1,0 +1,48 @@
+.gridDisplayImg {
+  display: flex;
+  justify-content: center;
+  min-height: 300px;
+}
+.gridDisplayText {
+  display: flex;
+  justify-content: center;
+}
+.searchBarDisplay {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#pokemonName {
+  font-size: 2.75rem;
+  text-align: center;
+}
+
+.pokemonImage {
+  margin: auto;
+  height: max-content;
+}
+
+@media only screen and (min-width: 0px) {
+  .gridDisplayText {
+    margin: 2rem 0;
+  }
+
+  #pokemonName {
+    font-size: 2.3rem;
+  }
+
+  .searchBarDisplay {
+    margin: 1rem 0 0 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .gridDisplayText {
+    margin: 4rem 0;
+  }
+
+  #pokemonName {
+    font-size: 2.75rem;
+  }
+}
