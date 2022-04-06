@@ -1,0 +1,17 @@
+#pokemonCardText {
+  color: #28293e;
+}
+
+#pokemonCardBody {
+  max-width: 240px;
+  background-color: #f1f1f1;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+#pokemonCardBody:hover {
+  transform: scale(1.02);
+}
+#pokemonCardBody:focus {
+  transform: scale(1.02);
+}

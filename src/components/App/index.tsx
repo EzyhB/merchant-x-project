@@ -6,6 +6,7 @@ import { lightTheme, darkTheme } from "../styles/Theme";
 import { Container } from "../styles/Container";
 import Navbar from "../Navbar";
 import PokemonDisplay from "../PokemonDisplay";
+import PokemonCarousel from "../PokemonCarousel";
 
 function App() {
   const [isLight, setIsLight] = useState(false);
@@ -15,6 +16,7 @@ function App() {
       <Navbar isLight={isLight} setIsLight={setIsLight} />
       <Container>
         <PokemonDisplay />
+        <PokemonCarousel />
       </Container>
     </ThemeProvider>
   );
